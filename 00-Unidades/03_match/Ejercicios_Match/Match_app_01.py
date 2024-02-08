@@ -7,8 +7,8 @@ import customtkinter
 
 '''
 
-nombre:
-apellido:
+nombre: Camila
+apellido: Mori Principe
 ---
 Ejercicio: Match_01
 ---

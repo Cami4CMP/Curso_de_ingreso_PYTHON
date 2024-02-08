@@ -5,8 +5,8 @@ from tkinter.simpledialog import askstring as prompt
 import customtkinter
 
 '''
-nombre:
-apellido:
+nombre: Camila
+apellido: Mori Principe
 ---
 TP: IF_Iluminacion
 ---
@@ -43,7 +43,18 @@ class App(customtkinter.CTk):
 
 
     def btn_calcular_on_click(self):
-        pass
+        dato_uno =  self.combobox_marca.get()
+        dato_dos = self.combobox_cantidad.get()
+        cantidad_int = int(dato_dos)
+        
+        precio_individual_lampara = 800
+        precio_por_cantidad_de_lampara = precio_individual_lampara * cantidad_int
+        
+        valor_de_descuento = 8
+        
+        if cantidad_int >=6:
+            valor_de_descuento = 50
+        
         
     
 if __name__ == "__main__":
