@@ -94,7 +94,9 @@ class App(customtkinter.CTk):
         suma = precio_uno + precio_dos + precio_tres
         iva_incluido = suma * 1.21
         
-        result = f"El total con iva incluido es de: ${iva_incluido}"
+        result = f"El total con iva incluido es de: ${iva_incluido}"#convertimos el 21% en decimal (0.21) y luego sumamos 1, 
+                                                                    #lo que nos da 1.21. Por lo tanto, al multiplicar el precio original por 1.21, 
+                                                                    #obtenemos el precio total con el IVA incluido.
         
         alert("TOTAL CON IVA", result)     
     

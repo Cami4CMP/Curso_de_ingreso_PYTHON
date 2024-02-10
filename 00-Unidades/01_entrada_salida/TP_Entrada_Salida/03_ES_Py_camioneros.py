@@ -3,6 +3,7 @@ from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
 import customtkinter
+import math
 
 '''
 nombre: Camila
@@ -50,15 +51,17 @@ class App(customtkinter.CTk):
         self.btn_tiempo_llegada.grid(row=4, pady=10, padx=30, columnspan=2, sticky="nsew")
     
     def btn_cantidad_camiones_on_click(self):
-        toneladas = self.txt_toneladas.get()
-        toneladas_float = float(toneladas)
+        # Averiguar la cantidad camiones que harian falta para transportar los materiales
+        toneladas = self.txt_toneladas.get() #se ingresa la cantidad de toneladas necesarias de materiales a transportar
+        toneladas_float = float(toneladas) 
 
-        operacion = (toneladas_float / 3.5) / 1000
-        operacion_int = int(operacion)
-        mensaje = f"La cantidad necesarias de camiones, será de {operacion_int} unidades"
+        operacion = (toneladas_float / 3.5) #cada camion puede transportar por viaje 3500kg
+        operacion_int = math.ceil(operacion)
+        
+        #informar la cantidad de camiones con un mensaje
+        mensaje = f"Serán necesarios {operacion_int} camiones en total"
 
         alert("cantidad de camiones", mensaje)
-        
         
 
     def btn_tiempo_llegada_on_click(self):
@@ -67,7 +70,7 @@ class App(customtkinter.CTk):
 
         operacion = (kilometro_float / 90)
         operacion_redondeo = round(operacion, 1)
-        mensaje = f"Los camiones va a recorrer {operacion_redondeo} horas."
+        mensaje = f"Los camiones van a recorrer {operacion_redondeo} horas."
 
         alert("cantidad de horas", mensaje)
     
