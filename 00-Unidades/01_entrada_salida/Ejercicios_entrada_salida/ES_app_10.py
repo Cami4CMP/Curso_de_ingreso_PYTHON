@@ -3,6 +3,7 @@ from tkinter.messagebox import showinfo as alert
 from tkinter.messagebox import askyesno as question
 from tkinter.simpledialog import askstring as prompt
 import customtkinter
+import math
 
 '''
 nombre: Camila
@@ -34,13 +35,16 @@ class App(customtkinter.CTk):
         self.btn_mostrar.grid(row=2, pady=20, padx=30, columnspan=2, sticky="nsew")
 
     def btn_mostrar_on_click(self):
-        valor_importe = self.txt_importe.get()
+        importe = self.txt_importe.get()
         
-        sueldo = float(valor_importe)
+        importe_float = float(importe)
         
-        descuento = sueldo * 0.80
+        descuento = importe_float * 0.80 #multiplicar por 0.80, ya que 0.80 representa el 80% del valor original. Con eso ya estoy reteniendo el 80% del valor original 
+                                        #y eliminando el 20% correspondiente al descuento. 
+                                        
+        redondeo = math.ceil(descuento)
         
-        alert("result", descuento)
+        alert("result", redondeo)
 
 
 if __name__ == "__main__":

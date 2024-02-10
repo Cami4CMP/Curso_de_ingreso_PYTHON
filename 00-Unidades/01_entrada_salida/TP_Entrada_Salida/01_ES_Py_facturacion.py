@@ -57,16 +57,15 @@ class App(customtkinter.CTk):
         producto_dos = self.txt_importe_2.get()
         producto_tres = self.txt_importe_3.get()
         
-        precio_uno = float(producto_uno)
-        precio_dos = float(producto_dos)
-        precio_tres = float(producto_tres)
+        importe_uno = float(producto_uno)
+        importe_dos = float(producto_dos)
+        importe_tres = float(producto_tres)
         
-        suma = precio_uno + precio_dos + precio_tres
+        #SUMA DE PRODUCTOS
+        suma = importe_uno + importe_dos + importe_tres
         
-        result = f"El resultado de la suma es: {suma}"
-        
-        alert("SUMA", result)
-        
+        mensaje = f"El total es ${suma}"
+        alert("TOTAL", mensaje)
 
     def btn_promedio_on_click(self):
         producto_uno = self.txt_importe_1.get()
@@ -77,10 +76,9 @@ class App(customtkinter.CTk):
         precio_dos = float(producto_dos)
         precio_tres = float(producto_tres)
         
-        suma = precio_uno + precio_dos + precio_tres
-        promedio = suma / 3
+        promedio = math.ceil((precio_uno + precio_dos + precio_tres) / 3)
         
-        result = f"El promedio es: {promedio}"
+        result = f"El promedio es: ${promedio}"
         
         alert("PROMEDIO", result)
 
@@ -94,11 +92,11 @@ class App(customtkinter.CTk):
         precio_tres = float(producto_tres)
         
         suma = precio_uno + precio_dos + precio_tres
-        total_con_iva = suma * 0.21
+        iva_incluido = suma * 1.21
         
-        result = f"El promedio es: {total_con_iva}"
+        result = f"El total con iva incluido es de: ${iva_incluido}"
         
-        alert("PROMEDIO", result)     
+        alert("TOTAL CON IVA", result)     
     
 if __name__ == "__main__":
     app = App()

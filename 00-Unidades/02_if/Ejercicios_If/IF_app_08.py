@@ -46,7 +46,7 @@ class App(customtkinter.CTk):
         estado_civil = self.lbl_estado_civil.get()
         
         if edad_int >= 18 and estado_civil == "soltero":
-            alert("ESTADO CIVIL", "Es soltero y no hace menor")
+            alert("ESTADO CIVIL", "Es soltero y no es menor")
 
         
         

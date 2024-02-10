@@ -38,6 +38,8 @@ class App(customtkinter.CTk):
         self.txt_nombre.insert(0, pruebadenombre)
         
         
+        
+        
     
 if __name__ == "__main__":
     app = App()
