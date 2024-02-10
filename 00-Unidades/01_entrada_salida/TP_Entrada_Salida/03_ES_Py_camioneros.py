@@ -51,26 +51,26 @@ class App(customtkinter.CTk):
         self.btn_tiempo_llegada.grid(row=4, pady=10, padx=30, columnspan=2, sticky="nsew")
     
     def btn_cantidad_camiones_on_click(self):
-        # Averiguar la cantidad camiones que harian falta para transportar los materiales
-        toneladas = self.txt_toneladas.get() #se ingresa la cantidad de toneladas necesarias de materiales a transportar
+        toneladas = self.txt_toneladas.get() 
         toneladas_float = float(toneladas) 
 
-        operacion = (toneladas_float / 3.5) #cada camion puede transportar por viaje 3500kg
-        operacion_int = math.ceil(operacion)
+        toneladas_por_viaje = 3500
+        camiones_por_viaje = toneladas_float / toneladas_por_viaje
+        operacion_int = math.ceil(camiones_por_viaje) #Acá redondeo a entero porque no puedo obtener fracciones de camiones
         
-        #informar la cantidad de camiones con un mensaje
         mensaje = f"Serán necesarios {operacion_int} camiones en total"
 
         alert("cantidad de camiones", mensaje)
         
 
     def btn_tiempo_llegada_on_click(self):
+        #TIEMPO EN HORAS
         kilometro = self.txt_kilometros.get()
         kilometro_float = float(kilometro)
 
-        operacion = (kilometro_float / 90)
+        operacion = (kilometro_float / 90) #la velocidad máxima y constante de cada camión es de 90 km/h
         operacion_redondeo = round(operacion, 1)
-        mensaje = f"Los camiones van a recorrer {operacion_redondeo} horas."
+        mensaje = f"Los camiones van a recorrer {operacion_redondeo} horas"
 
         alert("cantidad de horas", mensaje)
     
