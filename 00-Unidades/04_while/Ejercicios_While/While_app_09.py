@@ -40,7 +40,31 @@ class App(customtkinter.CTk):
                               columnspan=2, sticky="nsew")
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        contador_iteracion = 0
+        acumulador_numeros = 0 
+        
+        maximo = 1000
+        minimo = 1000
+
+        while contador_iteracion < 3 :
+            numero = prompt("ingreso","Ingrese numeros")
+            numero = int(numero)
+
+            if contador_iteracion == 0:
+                maximo = numero
+                minimo = numero
+
+            if numero > maximo:
+                maximo = numero
+                
+            if numero <minimo:
+                minimo = numero
+
+            contador_iteracion += 1 #Incremento de la variable de control
+
+       
+        self.txt_suma_acumulada.insert(0, f"max: {maximo}")
+        self.txt_promedio.insert(0, f"min: {minimo}")
 
 
 if __name__ == "__main__":

@@ -35,7 +35,26 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        
+        contador_iteracion = 0 #Variable de control del while. Esto se suelen nombrar con una sola letra pero en este caso es contador_iteracion
+        acumulador_numeros = 0 
+        #Lo que ocurre antes del while
+        while contador_iteracion < 5 :
+            #Lo que ocurre dentro del while
+            numero = prompt("ingreso","Ingresar 5 numeros")
+            numero = int(numero)
+
+            acumulador_numeros = acumulador_numeros + numero #Con esto ya podemos sumar y "RECORDAR" de alguna manera cumulando los numeros.
+
+
+            contador_iteracion += 1 #Incremento de la variable de control
+
+        #Lo que ocurre después del while
+        
+        promedio = acumulador_numeros / contador_iteracion #Se coloca por fuera del while para que suceda SOLO UNA VEZ y no 5 veces si estuviera dentro del while.
+        
+        self.txt_suma_acumulada.insert(0, acumulador_numeros)
+        self.txt_promedio.insert(0, promedio)
 
     
 if __name__ == "__main__":

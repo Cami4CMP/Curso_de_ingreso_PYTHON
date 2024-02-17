@@ -37,7 +37,7 @@ class App(customtkinter.CTk):
 
 
     def btn_comenzar_ingreso_on_click(self):
-        pass
+        datos = prompt("DATOS", "Ingrese sus datos")
 
     
 if __name__ == "__main__":

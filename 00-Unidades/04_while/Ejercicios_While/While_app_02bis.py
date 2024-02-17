@@ -29,13 +29,35 @@ class App(customtkinter.CTk):
         
     
     def btn_mostrar_iteracion_on_click(self):
-        
-        contador_iteracion = 10
 
-        while contador_iteracion > 0:
-            print(contador_iteracion - 1)
-            contador_iteracion = contador_iteracion - 1
-    
+        #ENTRADAS: 
+            #contador del 1 al 10
+            #variables que acumule la suma de los numeros pares
+        #PROCESO:
+        #SALIDA:
+            #Suma de numeros pares
+        
+        #contador = 1
+        #suma = 0 #Aca estia pasando lo siguiente : 2+4+6+8+10 que seria 30
+
+        #while contador <= 10:
+         #   if contador % 2 == 0: #Si el numero ES PAR, SOLO si es par...
+          #      suma += contador #...lo SUMO.
+
+           # contador += 1 #Esto suma de a uno...y con el if de arriba se va verificando que los numeros sean pares y se sumen sino no suma nada y pasa al siguiente numero.
+        
+        #alert("ES", suma)
+
+
+        suma = 0 
+        contador = 2 #arranco desde mi primer numero par
+        #NUMEROS PARES: 2 - 4 - 6 - 8 - 10
+
+        while contador <= 10:
+            suma += contador
+            contador += 2 #sumarle 2 al contador para que ya directamente pase al 4 y asi sucesivamente
+        
+        alert("", suma)
     
 if __name__ == "__main__":
     app = App()

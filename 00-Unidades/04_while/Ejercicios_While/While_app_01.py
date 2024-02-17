@@ -30,12 +30,18 @@ class App(customtkinter.CTk):
     
     def btn_mostrar_iteracion_on_click(self):
 
+        numero = 1
 
-        contador_iteracion = 0
+        while numero < 11:
+            alert("utn", numero)
+            numero += 1
 
-        while contador_iteracion < 10:
-            print(contador_iteracion + 1)
-            contador_iteracion = contador_iteracion + 1 # Si el contador vale 0. Acá se tiene que igualar a 0 + 1, de esta forma ya se cuenta el resultado de esa suma y pasa a contar desde 1, y en el bucle ya se va sumando de forma ascendente hasta llegar a mas de 10 y ahi logar que la condición sea falsa.
+
+        #contador_iteracion = 0
+
+        #while contador_iteracion < 10:
+            #print(contador_iteracion + 1)
+            #contador_iteracion = contador_iteracion + 1 # Si el contador vale 0. Acá se tiene que igualar a 0 + 1, de esta forma ya se cuenta el resultado de esa suma y pasa a contar desde 1, y en el bucle ya se va sumando de forma ascendente hasta llegar a mas de 10 y ahi logar que la condición sea falsa.
 
         
 

@@ -32,10 +32,9 @@ class App(customtkinter.CTk):
         
         clave = prompt("contraseña", "Ingrese la contraseña: ")
 
-        while True:
-            if clave != "utn750":
-                mensaje = "Contraseña incorrecta. Vuelva a intentarlo."
-            else:
+        while clave != "utn750":
+                clave = prompt("Clave incorrecta", "Vuelva a ingresar la clave")
+                
                 mensaje = "¡Contraseña correcta!"
 
         alert("VALIDACION DE USUARIO", mensaje)

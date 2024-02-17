@@ -30,13 +30,12 @@ class App(customtkinter.CTk):
     
     def btn_mostrar_iteracion_on_click(self):
 
-        
-        contador_iteracion = 10
+        numero = 10
 
-        while contador_iteracion > 0:
-            print(contador_iteracion - 1)
-            contador_iteracion = contador_iteracion - 1
-    
+        while numero > 0:
+            alert("utn", numero)
+            numero -= 1
+            
     
 if __name__ == "__main__":
     app = App()

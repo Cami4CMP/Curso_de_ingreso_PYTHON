@@ -42,10 +42,12 @@ class App(customtkinter.CTk):
         mensaje = ""
 
         match mes:
-            case "Enero":
-                alert("", "este mes no tiene más de 29 días")
+            case "Febrero":
+                mensaje = "este mes no tiene más de 29 días"
             case _:
-                alert("", "Este mes tiene 30 días o mas")
+                mensaje = "Este mes tiene 30 días o mas"
+
+        alert("INFORME", mensaje)
     
     
 if __name__ == "__main__":
