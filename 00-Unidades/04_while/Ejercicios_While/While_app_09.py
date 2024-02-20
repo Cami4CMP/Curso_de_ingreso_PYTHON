@@ -66,6 +66,8 @@ class App(customtkinter.CTk):
         self.txt_suma_acumulada.insert(0, f"max: {maximo}")
         self.txt_promedio.insert(0, f"min: {minimo}")
 
+        if numero > maximo:
+            maximo = numero
 
 if __name__ == "__main__":
     app = App()

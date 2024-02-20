@@ -57,45 +57,44 @@ class App(customtkinter.CTk):
         
     
     def btn_informar_on_click(self):
+        destinos = self.combobox_destino.get()
+        estaciones = self.combobox_estaciones.get()
+        
         precio_base = 15000
-
-        destino = self.combobox_destino.get()
-        estacion = ""
-        destinos = ""
-
         descuento = 0
-        aumento = ""
+        aumento = 0
 
-        total = 
-        match estacion and destinos:
+        match estaciones:
             case "Invierno":
                 match destinos:
                     case "Bariloche":
-                        mensaje = f"Aumento del 20%: {aumento}"
+                        aumento = precio_base * 0.20
                     case "Cataratas" | "Cordoba":
-                        mensaje = f"Descuento del 10%: {descuento}"
+                        descuento = precio_base * 0.10
                     case "Mar del plata":
-                        mensaje = f"Descuento del 20%: {descuento}"
+                        descuento = precio_base * 0.20
             case "Verano":
-                match destino:
+                match destinos:
                     case "Bariloche":
-                        mensaje = f"Descuento del 20%: {descuento}"
+                        descuento = precio_base * 0.20
                     case "Cataratas" | "Cordoba":
-                        mensaje = f"Aumento del 10%: {descuento}"
+                        descuento = precio_base * 0.10
                     case "Mar del plata":
-                        mensaje = f"Aumento del 20%: {descuento}"
+                        aumento = precio_base * 0.20
             case "Primavera" | "Otoño":
-                match destino:
+                match destinos:
                     case "Bariloche":
-                        mensaje = f"Aumento del 20%: {aumento}"
+                        aumento = precio_base * 0.20
                     case "Cataratas" | "Cordoba":
-                        mensaje = f"Descuento del 10%: {descuento}"
+                        descuento = precio_base * 0.10
                     case "Mar del plata":
-                        mensaje = f"Descuento del 20%: {descuento}"
+                        descuento = precio_base * 0.20
+
+        precio_final = precio_base + aumento - descuento
 
 
 
-        alert("INFORME", mensaje)
+        alert("INFORME", f"El precio final para viajar a {destinos} en {estaciones} es de: ${precio_final}")
 
             
     
